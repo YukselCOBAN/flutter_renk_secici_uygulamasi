@@ -1,16 +1,31 @@
-# flutter_renk_secici_uygulamasi
+# Flutter ColorDisplay Widget
 
-A new Flutter project.
+Bu proje, Flutter'da özelleştirilebilir ve duyarlı (responsive) bir renk görüntüleme bileşeni olan **ColorDisplay** widget'ını içerir. Bu bileşen, seçilen bir rengi ekran boyutuna göre dinamik olarak boyutlandırarak şık bir kutu veya daire şeklinde sunar.
 
-## Getting Started
+## Özellikler
 
-This project is a starting point for a Flutter application.
+* **Responsive Boyutlandırma:** `MediaQuery` kullanarak ekranın en kısa kenarına (`shortestSide`) göre otomatik boyutlanır.
+* **Dinamik Şekil:** `isCircular` parametresi ile tek bir dokunuşla kare (yuvarlatılmış köşeli) veya tam daire görünümüne geçebilir.
+* **Gölge Efekti:** Seçilen rengin opaklığına göre (`withOpacity`) otomatik olarak senkronize olan yumuşak bir gölge (`BoxShadow`) ekler.
+* **Hata Ayıklama:** Cihaz ve konteyner boyutlarını terminalde (`debugPrint`) takip etmenizi sağlar.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Ekran Görüntüsü
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Uygulama Görüntüsü |
+| :---: |
+| ![Ekran Görüntüsü](assets/uygulama.jpg) |
+
+
+## Kod Yapısı
+
+Widget iki temel parametre alır:
+1. `selectedColor`: Görüntülenecek ana renk.
+2. `isCircular`: `true` ise daire, `false` ise 10px yuvarlatılmış köşeli kare oluşturur.
+
+```dart
+ColorDisplay(
+  selectedColor: Colors.blue,
+  isCircular: true,
+)
+
